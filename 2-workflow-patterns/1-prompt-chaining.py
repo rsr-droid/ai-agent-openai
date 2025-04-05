@@ -141,7 +141,7 @@ def process_calendar_request(user_input: str) -> Optional[EventConfirmation]:
     logger.debug(f"Raw input: {user_input}")
 
     # First LLM call: Extract basic info
-    initial_extraction =  (user_input)
+    initial_extraction =  extract_event_info(user_input)
 
     # Gate check: Verify if it's a calendar event with sufficient confidence
     if (
